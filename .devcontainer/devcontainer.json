@@ -2,11 +2,15 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "Python 3 - planetary computer",
+	
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/planetary-computer/python",
-	"features": {
-		"ghcr.io/rocker-org/devcontainer-features/miniforge:1": {}
-	}
+	"context": "..",
+	"dockerFile": "Dockerfile",
+	"build": {
+	  "args": {
+		"GIT_USER": "your_username"
+	  }
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -15,7 +19,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postCreateCommand": "conda activate notebook"
+
 
 	// Configure tool-specific properties.
 	// "customizations": {},
