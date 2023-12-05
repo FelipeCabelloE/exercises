@@ -12,5 +12,6 @@ COPY . /app
 
 # Git configuration (replace with actual values or use build arguments)
 ARG GIT_USER
+
 RUN git config --global user.name "${GIT_USER}"
 RUN git config --global user.email "${GIT_USER}@users.noreply.github.com"
